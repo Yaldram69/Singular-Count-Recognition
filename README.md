@@ -69,3 +69,18 @@ process_video("input.mp4", "output.mp4", "yolov8n.pt", output_resolution=(640, 4
 - Counts are per frame, not cumulative object tracking, despite the notebook name "Cumulative counting". No tracker is used.
 - The output video is written at the resolution given to `process_video`, and frames are resized to that size before detection.
 - Weight files are included in the folder. The `.ipynb_checkpoints` folder is an artefact of Jupyter and is not needed.
+
+## Pretrained YOLO weights (not included)
+
+The following off-the-shelf Ultralytics checkpoints were removed from this repository because they are publicly downloadable. The code loads them by name, and Ultralytics downloads them automatically on first use:
+
+- `yolo11n.pt`
+- `yolov8m.pt`
+- `yolov8n.pt`
+
+```python
+from ultralytics import YOLO
+model = YOLO("yolov8n.pt")  # downloaded automatically if not present
+```
+
+Or download them manually from https://github.com/ultralytics/assets/releases
